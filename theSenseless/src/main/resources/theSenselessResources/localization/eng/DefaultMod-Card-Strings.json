@@ -3,10 +3,19 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "theSenseless:CardFlashKick": {
+    "NAME": "Flash Kick",
+    "DESCRIPTION": "Deal !D! damage. Gain !B! Block."
+  },
+  "theSenseless:CardLungeKick": {
+    "NAME": "Lunge Kick",
+    "DESCRIPTION": "Deal !D! damage. Draw !C! Cards."
+  },
   "theSenseless:CardDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+
   "theSenseless:DefaultCommonAttack": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"

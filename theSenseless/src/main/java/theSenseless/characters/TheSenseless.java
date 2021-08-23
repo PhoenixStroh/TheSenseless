@@ -159,23 +159,35 @@ public class TheSenseless extends CustomPlayer {
 
 
         retVal.add(CardStrike.ID);
+        retVal.add(CardStrike.ID);
+        retVal.add(CardStrike.ID);
+        retVal.add(CardStrike.ID);
+        retVal.add(CardStrike.ID);
+
+        retVal.add(CardDefend.ID);
+        retVal.add(CardDefend.ID);
+        retVal.add(CardDefend.ID);
+        retVal.add(CardDefend.ID);
         retVal.add(CardDefend.ID);
 
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
+        retVal.add(CardFlashKick.ID);
+        retVal.add(CardFlashKick.ID);
 
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultUncommonSkill.ID);
-        retVal.add(DefaultRareSkill.ID);
+        //retVal.add(DefaultCommonAttack.ID);
+        //retVal.add(DefaultUncommonAttack.ID);
+        //retVal.add(DefaultRareAttack.ID);
 
-        retVal.add(DefaultCommonPower.ID);
-        retVal.add(DefaultUncommonPower.ID);
-        retVal.add(DefaultRarePower.ID);
+        //retVal.add(DefaultCommonSkill.ID);
+        //retVal.add(DefaultUncommonSkill.ID);
+        //retVal.add(DefaultRareSkill.ID);
 
-        retVal.add(DefaultAttackWithVariable.ID);
-        retVal.add(DefaultSecondMagicNumberSkill.ID);
-        retVal.add(OrbSkill.ID);
+        //retVal.add(DefaultCommonPower.ID);
+        //retVal.add(DefaultUncommonPower.ID);
+        //retVal.add(DefaultRarePower.ID);
+
+        //retVal.add(DefaultAttackWithVariable.ID);
+        //retVal.add(DefaultSecondMagicNumberSkill.ID);
+        //retVal.add(OrbSkill.ID);
         return retVal;
     }
 
