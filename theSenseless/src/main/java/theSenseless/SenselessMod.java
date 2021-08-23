@@ -214,6 +214,7 @@ public class SenselessMod implements
     
     public static void initialize() {
         logger.info("========================= Initializing Default Mod. Hi. =========================");
+        @SuppressWarnings("unused")
         SenselessMod defaultmod = new SenselessMod();
         logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
     }
