@@ -48,7 +48,7 @@ public class TheSenseless extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_DEFAULT;
+        public static AbstractPlayer.PlayerClass THE_SENSELESS;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor COLOR_GRAY;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
@@ -110,9 +110,9 @@ public class TheSenseless extends CustomPlayer {
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_2, // campfire pose
-                THE_DEFAULT_SHOULDER_1, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
+                THE_SENSELESS_SHOULDER_2, // campfire pose
+                THE_SENSELESS_SHOULDER_1, // another campfire pose
+                THE_SENSELESS_CORPSE, // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
@@ -121,8 +121,8 @@ public class TheSenseless extends CustomPlayer {
         // =============== ANIMATIONS =================  
 
         loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
+                THE_SENSELESS_SKELETON_ATLAS,
+                THE_SENSELESS_SKELETON_JSON,
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -155,6 +155,11 @@ public class TheSenseless extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         logger.info("Begin loading starter Deck Strings");
+        logger.info("My Cards: " + CardStrike.ID + " " + CardDefend.ID);
+
+
+        retVal.add(CardStrike.ID);
+        retVal.add(CardDefend.ID);
 
         retVal.add(DefaultCommonAttack.ID);
         retVal.add(DefaultUncommonAttack.ID);

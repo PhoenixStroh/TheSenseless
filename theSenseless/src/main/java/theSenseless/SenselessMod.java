@@ -86,18 +86,18 @@ public class SenselessMod implements
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "theSenselessResources/images/1024/card_default_gray_orb.png";
     
     // Character assets
-    private static final String THE_DEFAULT_BUTTON = "theSenselessResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "theSenselessResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "theSenselessResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "theSenselessResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "theSenselessResources/images/char/defaultCharacter/corpse.png";
+    private static final String THE_SENSELESS_BUTTON = "theSenselessResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String THE_SENSELESS_PORTRAIT = "theSenselessResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    public static final String THE_SENSELESS_SHOULDER_1 = "theSenselessResources/images/char/defaultCharacter/shoulder.png";
+    public static final String THE_SENSELESS_SHOULDER_2 = "theSenselessResources/images/char/defaultCharacter/shoulder2.png";
+    public static final String THE_SENSELESS_CORPSE = "theSenselessResources/images/char/defaultCharacter/corpse.png";
     
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "theSenselessResources/images/Badge.png";
     
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "theSenselessResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "theSenselessResources/images/char/defaultCharacter/skeleton.json";
+    public static final String THE_SENSELESS_SKELETON_ATLAS = "theSenselessResources/images/char/defaultCharacter/skeleton.atlas";
+    public static final String THE_SENSELESS_SKELETON_JSON = "theSenselessResources/images/char/defaultCharacter/skeleton.json";
     
     // =============== MAKE IMAGE PATHS =================
     
@@ -136,33 +136,8 @@ public class SenselessMod implements
         logger.info("Subscribe to BaseMod hooks");
         
         BaseMod.subscribe(this);
-        
-      /*
-           (   ( /(  (     ( /( (            (  `   ( /( )\ )    )\ ))\ )
-           )\  )\()) )\    )\()))\ )   (     )\))(  )\()|()/(   (()/(()/(
-         (((_)((_)((((_)( ((_)\(()/(   )\   ((_)()\((_)\ /(_))   /(_))(_))
-         )\___ _((_)\ _ )\ _((_)/(_))_((_)  (_()((_) ((_|_))_  _(_))(_))_
-        ((/ __| || (_)_\(_) \| |/ __| __| |  \/  |/ _ \|   \  |_ _||   (_)
-         | (__| __ |/ _ \ | .` | (_ | _|  | |\/| | (_) | |) |  | | | |) |
-          \___|_||_/_/ \_\|_|\_|\___|___| |_|  |_|\___/|___/  |___||___(_)
-      */
       
         setModID("theSenseless");
-        // cool
-        // TODO: NOW READ THIS!!!!!!!!!!!!!!!:
-        
-        // 1. Go to your resources folder in the project panel, and refactor> rename theDefaultResources to
-        // yourModIDResources.
-        
-        // 2. Click on the localization > eng folder and press ctrl+shift+r, then select "Directory" (rather than in Project) and press alt+c (or mark the match case option)
-        // replace all instances of theDefault with yourModID, and all instances of thedefault with yourmodid (the same but all lowercase).
-        // Because your mod ID isn't the default. Your cards (and everything else) should have Your mod id. Not mine.
-        // It's important that the mod ID prefix for keywords used in the cards descriptions is lowercase!
-
-        // 3. Scroll down (or search for "ADD CARDS") till you reach the ADD CARDS section, and follow the TODO instructions
-
-        // 4. FINALLY and most importantly: Scroll up a bit. You may have noticed the image locations above don't use getModID()
-        // Change their locations to reflect your actual ID rather than theDefault. They get loaded before getID is a thing.
         
         logger.info("Done subscribing");
         
@@ -250,13 +225,13 @@ public class SenselessMod implements
     
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheSenseless.Enums.THE_DEFAULT.toString());
+        logger.info("Beginning to edit characters. " + "Add " + TheSenseless.Enums.THE_SENSELESS.toString());
         
-        BaseMod.addCharacter(new TheSenseless("the Default", TheSenseless.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheSenseless.Enums.THE_DEFAULT);
+        BaseMod.addCharacter(new TheSenseless("the Default", TheSenseless.Enums.THE_SENSELESS),
+                THE_SENSELESS_BUTTON, THE_SENSELESS_PORTRAIT, TheSenseless.Enums.THE_SENSELESS);
         
         receiveEditPotions();
-        logger.info("Added " + TheSenseless.Enums.THE_DEFAULT.toString());
+        logger.info("Added " + TheSenseless.Enums.THE_SENSELESS.toString());
     }
     
     // =============== /LOAD THE CHARACTER/ =================
@@ -314,7 +289,7 @@ public class SenselessMod implements
         // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
         AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
             .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
-            .playerClass(TheSenseless.Enums.THE_DEFAULT) // Character specific event
+            .playerClass(TheSenseless.Enums.THE_SENSELESS) // Character specific event
             .create();
 
         // Add the event
@@ -332,9 +307,9 @@ public class SenselessMod implements
         logger.info("Beginning to edit potions");
         
         // Class Specific Potion. If you want your potion to not be class-specific,
-        // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
+        // just remove the player class at the end (in this case the "TheDefaultEnum.THE_SENSELESS".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheSenseless.Enums.THE_DEFAULT);
+        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheSenseless.Enums.THE_SENSELESS);
         
         logger.info("Done editing potions");
     }
@@ -398,8 +373,6 @@ public class SenselessMod implements
         // The ID for this function isn't actually your modid as used for prefixes/by the getModID() method.
         // It's the mod id you give MTS in ModTheSpire.json - by default your artifact ID in your pom.xml
 
-        //TODO: Rename the "DefaultMod" with the modid in your ModTheSpire.json file
-        //TODO: The artifact mentioned in ModTheSpire.json is the artifactId in pom.xml you should've edited earlier
         new AutoAdd("TheSenseless") // ${project.artifactId}
             .packageFilter(AbstractDefaultCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
             .setDefaultSeen(true)
