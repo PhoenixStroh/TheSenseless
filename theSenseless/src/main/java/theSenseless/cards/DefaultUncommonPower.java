@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theSenseless.DefaultMod;
+import theSenseless.SenselessMod;
 import theSenseless.actions.UncommonPowerAction;
-import theSenseless.characters.TheDefault;
+import theSenseless.characters.TheSenseless;
 
-import static theSenseless.DefaultMod.makeCardPath;
+import static theSenseless.SenselessMod.makeCardPath;
 
 public class DefaultUncommonPower extends AbstractDynamicCard {
 
@@ -22,7 +22,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(DefaultUncommonPower.class.getSimpleName());
+    public static final String ID = SenselessMod.makeID(DefaultUncommonPower.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -35,7 +35,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheSenseless.Enums.COLOR_GRAY;
 
     private static final int COST = -1;
     private static final int MAGIC = 1;

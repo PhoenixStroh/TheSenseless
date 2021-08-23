@@ -3,11 +3,11 @@ package theSenseless.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import theSenseless.DefaultMod;
+import theSenseless.SenselessMod;
 import theSenseless.util.TextureLoader;
 
-import static theSenseless.DefaultMod.makeRelicOutlinePath;
-import static theSenseless.DefaultMod.makeRelicPath;
+import static theSenseless.SenselessMod.makeRelicOutlinePath;
+import static theSenseless.SenselessMod.makeRelicPath;
 
 public class PlaceholderRelic extends CustomRelic {
 
@@ -18,7 +18,7 @@ public class PlaceholderRelic extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("PlaceholderRelic");
+    public static final String ID = SenselessMod.makeID("PlaceholderRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));

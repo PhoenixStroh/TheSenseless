@@ -4,7 +4,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import theSenseless.cards.AbstractDefaultCard;
 
-import static theSenseless.DefaultMod.makeID;
+import static theSenseless.SenselessMod.makeID;
 
 public class DefaultSecondMagicNumber extends DynamicVariable {
 

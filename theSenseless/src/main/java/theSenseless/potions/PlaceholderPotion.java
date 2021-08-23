@@ -15,7 +15,7 @@ import basemod.abstracts.CustomPotion;
 
 public class PlaceholderPotion extends CustomPotion {
 
-    public static final String POTION_ID = theSenseless.DefaultMod.makeID("PlaceholderPotion");
+    public static final String POTION_ID = theSenseless.SenselessMod.makeID("PlaceholderPotion");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
     
     public static final String NAME = potionStrings.NAME;

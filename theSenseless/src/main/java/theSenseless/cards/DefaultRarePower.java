@@ -5,11 +5,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theSenseless.DefaultMod;
-import theSenseless.characters.TheDefault;
+import theSenseless.SenselessMod;
+import theSenseless.characters.TheSenseless;
 import theSenseless.powers.RarePower;
 
-import static theSenseless.DefaultMod.makeCardPath;
+import static theSenseless.SenselessMod.makeCardPath;
 
 public class DefaultRarePower extends AbstractDynamicCard {
 
@@ -21,7 +21,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(DefaultRarePower.class.getSimpleName());
+    public static final String ID = SenselessMod.makeID(DefaultRarePower.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     // /TEXT DECLARATION/
@@ -32,7 +32,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheSenseless.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
