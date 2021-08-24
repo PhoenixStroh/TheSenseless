@@ -19,6 +19,12 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "theSenseless:CardForget": {
+    "NAME": "Forget",
+    "DESCRIPTION": "Discard up to 3 Cards. Scry !M!."
+  },
+
+
 
   "theSenseless:DefaultCommonAttack": {
     "NAME": "Strike",
