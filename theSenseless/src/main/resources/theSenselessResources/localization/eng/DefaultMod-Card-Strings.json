@@ -9,7 +9,11 @@
   },
   "theSenseless:CardLungeKick": {
     "NAME": "Lunge Kick",
-    "DESCRIPTION": "Deal !D! damage. Draw !C! Cards."
+    "DESCRIPTION": "Deal !D! damage. Draw !M! Cards."
+  },
+  "theSenseless:CardAxeKick": {
+    "NAME": "Axe Kick",
+    "DESCRIPTION": "Apply !M! Vulnerable. Deal !D! damage."
   },
   "theSenseless:CardDefend": {
     "NAME": "Defend",

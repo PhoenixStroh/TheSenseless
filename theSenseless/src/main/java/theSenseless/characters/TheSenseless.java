@@ -64,8 +64,8 @@ public class TheSenseless extends CustomPlayer {
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 9;
-    public static final int ORB_SLOTS = 3;
+    public static final int CARD_DRAW = 5;
+    public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
@@ -171,7 +171,7 @@ public class TheSenseless extends CustomPlayer {
         retVal.add(CardDefend.ID);
 
         retVal.add(CardFlashKick.ID);
-        retVal.add(CardFlashKick.ID);
+        retVal.add(CardAxeKick.ID);
 
         //retVal.add(DefaultCommonAttack.ID);
         //retVal.add(DefaultUncommonAttack.ID);
@@ -196,8 +196,8 @@ public class TheSenseless extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         retVal.add(PlaceholderRelic.ID);
-        retVal.add(PlaceholderRelic2.ID);
-        retVal.add(DefaultClickableRelic.ID);
+        //retVal.add(PlaceholderRelic2.ID);
+        //retVal.add(DefaultClickableRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
