@@ -6,5 +6,9 @@
 "theSenseless:RarePower": {
         "NAME": "Placeholder Power",
         "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"theSenseless:EarlyBirdPower": {
+        "NAME": "Early Bird",
+        "DESCRIPTIONS": ["At the start of your turn, Wilt #b", " card." , " cards."]
 }
 }

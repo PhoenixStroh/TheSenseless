@@ -7,6 +7,10 @@
     "NAME": "Flash Kick",
     "DESCRIPTION": "Deal !D! damage. Gain !B! Block."
   },
+  "theSenseless:CardAnnihilate": {
+    "NAME": "Annihilate",
+    "DESCRIPTION": "Fleeting. Deal !D! damage."
+  },
   "theSenseless:CardLungeKick": {
     "NAME": "Lunge Kick",
     "DESCRIPTION": "Deal !D! damage. Draw !M! Cards."
@@ -36,6 +40,10 @@
     "NAME": "Switcheroo",
     "DESCRIPTION": "Switch all cards in your Discard Pile with your Draw Pile.",
     "UPGRADE_DESCRIPTION": "Retain. Switch all cards in your Discard Pile with your Draw Pile."
+  },
+  "theSenseless:CardEarlyBird": {
+    "NAME": "Early Bird",
+    "DESCRIPTION": "At the beginning of your turn, Wilt a Card."
   },
   
   
