@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theSenseless.SenselessMod;
-import theSenseless.actions.WiltAction;
 import theSenseless.cards.CardForgottenTechnique;
 import theSenseless.cards.DefaultRareAttack;
 import theSenseless.util.TextureLoader;
@@ -50,7 +49,7 @@ public class EarlyBirdPower extends AbstractPower implements CloneablePowerInter
     @Override
     public void atStartOfTurn() { // At the start of your turn
         AbstractCard playCard = new CardForgottenTechnique(); // Declare Card - the DefaultRareAttack card. We will name it 'playCard'.
-        AbstractMonster targetMonster = AbstractDungeon.getRandomMonster(); // Declare Target - Random Monster. We will name the monster 'targetMonster'.
+        //AbstractMonster targetMonster = AbstractDungeon.getRandomMonster(); // Declare Target - Random Monster. We will name the monster 'targetMonster'.
 
         playCard.freeToPlayOnce = true; //Self Explanatory
 
@@ -62,7 +61,7 @@ public class EarlyBirdPower extends AbstractPower implements CloneablePowerInter
         // as it's just 1 line directly under. You can remove them, if you want. In fact, you can even put it all on 1 line:
         //  if (playCard.type != AbstractCard.CardType.POWER) playCard.purgeOnUse = true; - works identically
 
-        AbstractDungeon.actionManager.addToBottom(new WiltAction()); // Play the card on the target.
+        AbstractDungeon.actionManager.addToBottom(new NewQueueCardAction(playCard,true)); // Play the card on the target.
     }
 
     @Override
