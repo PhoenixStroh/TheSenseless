@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSenseless.SenselessMod;
 import theSenseless.characters.TheSenseless;
-import theSenseless.actions.SwitchPilesAction;
+import theSenseless.actions.SwitchDiscardAndDrawAction;
 import theSenseless.actions.WiltAction;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
@@ -15,24 +15,6 @@ import static theSenseless.SenselessMod.makeCardPath;
 // public class ${NAME} extends AbstractDynamicCard
 
 public class CardSwitcheroo extends AbstractDynamicCard {
-
-    /*
-     * "Hey, I wanna make a bunch of cards now." - You, probably.
-     * ok cool my dude no problem here's the most convenient way to do it:
-     *
-     * Copy all of the code here (Ctrl+A > Ctrl+C)
-     * Ctrl+Shift+A and search up "file and code template"
-     * Press the + button at the top and name your template whatever it is for - "AttackCard" or "PowerCard" or something up to you.
-     * Read up on the instructions at the bottom. Basically replace anywhere you'd put your cards name with ${NAME}
-     * And then you can do custom ones like ${DAMAGE} and ${TARGET} if you want.
-     * I'll leave some comments on things you might consider replacing with what.
-     *
-     * Of course, delete all the comments and add anything you want (For example, if you're making a skill card template you'll
-     * likely want to replace that new DamageAction with a gain Block one, and add baseBlock instead, or maybe you want a
-     * universal template where you delete everything unnecessary - up to you)
-     *
-     * You can create templates for anything you ever want to. Cards, relics, powers, orbs, etc. etc. etc.
-     */
 
     // TEXT DECLARATION
 
@@ -66,7 +48,7 @@ public class CardSwitcheroo extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new SwitchPilesAction(p.discardPile, p.drawPile));
+        AbstractDungeon.actionManager.addToBottom(new SwitchDiscardAndDrawAction());
     }
 
 

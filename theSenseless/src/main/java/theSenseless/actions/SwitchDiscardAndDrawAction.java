@@ -15,7 +15,7 @@ import theSenseless.SenselessMod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SwitchPilesAction extends AbstractGameAction {
+public class SwitchDiscardAndDrawAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(SenselessMod.class.getName());
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DiscardPileToTopOfDeckAction");
@@ -23,13 +23,13 @@ public class SwitchPilesAction extends AbstractGameAction {
     public static final String[] TEXT = uiStrings.TEXT;
 
     private AbstractPlayer p;
-    private CardGroup firstGroup;
-    private CardGroup secondGroup;
+    private CardGroup discardGroup;
+    private CardGroup drawGroup;
 
-    public SwitchPilesAction(CardGroup firstGroup, CardGroup secondGroup) {
+    public SwitchDiscardAndDrawAction() {
         this.p = AbstractDungeon.player;
-        this.firstGroup = firstGroup;
-        this.secondGroup = secondGroup;
+        this.discardGroup = p.discardPile;
+        this.drawGroup = p.drawPile;
 
         this.actionType = AbstractGameAction.ActionType.SHUFFLE;
         this.duration = Settings.ACTION_DUR_LONG;
@@ -42,30 +42,36 @@ public class SwitchPilesAction extends AbstractGameAction {
             return;
         }
 
-        CardGroup firstTmpGroup = new CardGroup(firstGroup.type);
-        CardGroup secondTmpGroup = new CardGroup(secondGroup.type);
+        if (this.duration == Settings.ACTION_DUR_LONG)
+        {
+            CardGroup tmpGroup = new CardGroup(discardGroup.type);
+    
+            logger.info("FirstGroup Size: " + discardGroup.size());
+            logger.info("SecondGroup Size: " + drawGroup.size());
 
-        while (firstGroup.size() > 0)
-        {
-            firstTmpGroup.addToBottom(firstGroup.getTopCard()); 
-            firstGroup.removeTopCard();
-        }
-        while (secondGroup.size() > 0)
-        {
-            secondTmpGroup.addToBottom(secondGroup.getTopCard()); 
-            secondGroup.removeTopCard();
-        }
+            //Add DrawGroup Cards to tempGroup
+            for (AbstractCard c : drawGroup.group)
+            {
+                tmpGroup.addToTop(c);
+            }            
+            
+            //Move all discard cards to draw cards
+            while (discardGroup.size() > 0)
+            {
+                AbstractCard tmp = discardGroup.getTopCard();
+                discardGroup.removeCard(tmp);
+                discardGroup.moveToDeck(tmp, false);
+            }
 
-        for (AbstractCard c : firstTmpGroup.group)
-        {
-            firstGroup.addToTop(c);
-        }
-        for (AbstractCard c : secondTmpGroup.group)
-        {
-            secondGroup.addToTop(c);
+            //Move all tempGroup cards from draw pile to discard pile
+
+            for (AbstractCard c : tmpGroup.group)
+            {
+                drawGroup.removeCard(c);
+                drawGroup.moveToDiscardPile(c);                
+            }
         }
         
         tickDuration();
-        this.isDone = true;
     }
 }
