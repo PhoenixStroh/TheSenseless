@@ -1,11 +1,9 @@
 package theSenseless.cards;
 
-import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSenseless.SenselessMod;
-import theSenseless.actions.UpToDiscardAction;
 import theSenseless.characters.TheSenseless;
 import theSenseless.actions.WiltAction;
 
@@ -74,8 +72,6 @@ public class CardForgottenTechnique extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-
-            
 
             initializeDescription();
         }

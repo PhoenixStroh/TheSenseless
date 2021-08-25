@@ -4,14 +4,20 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+
+import theSenseless.SenselessMod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class WiltAction extends AbstractGameAction {
+    public static final Logger logger = LogManager.getLogger(SenselessMod.class.getName());
+
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DiscardPileToTopOfDeckAction");
 
     public static final String[] TEXT = uiStrings.TEXT;
@@ -27,6 +33,18 @@ public class WiltAction extends AbstractGameAction {
             case "discard": this.cardGroup = this.p.discardPile; break;
             case "exhaust": this.cardGroup = this.p.exhaustPile; break;
         }
+        
+        CardGroup tmpGroup = new CardGroup(this.cardGroup.type);
+        for (AbstractCard c : this.cardGroup.group)
+        {
+            logger.info("Sorting Wilt Deck. Cost: " + c.cost + " <= Energy: " + (EnergyPanel.totalCount - 1));
+            if (c.cost <= EnergyPanel.totalCount - 1)
+            {
+                tmpGroup.addToRandomSpot(c);
+            }
+        }
+        this.cardGroup = tmpGroup;
+
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
     }
