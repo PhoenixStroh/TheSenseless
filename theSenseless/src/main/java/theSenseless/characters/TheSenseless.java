@@ -174,6 +174,8 @@ public class TheSenseless extends CustomPlayer {
         retVal.add(CardAxeKick.ID);
 
         retVal.add(CardForget.ID);
+        retVal.add(CardForgottenTechnique.ID);
+        retVal.add(CardDejaVu.ID);
 
         //retVal.add(DefaultCommonAttack.ID);
         //retVal.add(DefaultUncommonAttack.ID);

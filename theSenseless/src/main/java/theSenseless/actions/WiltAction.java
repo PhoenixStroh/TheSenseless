@@ -54,6 +54,11 @@ public class WiltAction extends AbstractGameAction {
         this("discard",ignoreCost);
     }
 
+    public WiltAction(String cardGroup)
+    {
+        this(cardGroup,false);
+    }
+
     public WiltAction()
     {
         this("discard",false);

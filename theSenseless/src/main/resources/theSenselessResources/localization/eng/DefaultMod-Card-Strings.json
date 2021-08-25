@@ -26,7 +26,11 @@
   "theSenseless:CardForgottenTechnique": {
     "NAME": "Forgotten Technique",
     "DESCRIPTION": "Wilt a card from your Discard Pile.",
-    "UPGRADE_DESCRIPTION": "Retain. Wilt a card from your Discard Pile."
+    "UPGRADE_DESCRIPTION": "Retain.\nWilt a card from your Discard Pile."
+  },
+  "theSenseless:CardDejaVu": {
+    "NAME": "Deja Vu",
+    "DESCRIPTION": "Wilt a card from your Exhaust Pile."
   },
 
 
