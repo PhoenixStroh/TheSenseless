@@ -32,8 +32,13 @@
     "NAME": "Deja Vu",
     "DESCRIPTION": "Wilt a card from your Exhaust Pile."
   },
-
-
+  "theSenseless:CardSwitcheroo": {
+    "NAME": "Switcheroo",
+    "DESCRIPTION": "Switch all cards in your Discard Pile with your Draw Pile.",
+    "UPGRADE_DESCRIPTION": "Retain.\nSwitch all cards in your Discard Pile with your Draw Pile."
+  },
+  
+  
 
   "theSenseless:DefaultCommonAttack": {
     "NAME": "Strike",
