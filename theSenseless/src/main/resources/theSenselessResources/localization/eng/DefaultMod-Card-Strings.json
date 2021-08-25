@@ -26,7 +26,7 @@
   "theSenseless:CardForgottenTechnique": {
     "NAME": "Forgotten Technique",
     "DESCRIPTION": "Wilt a card from your Discard Pile.",
-    "UPGRADE_DESCRIPTION": "Retain.\nWilt a card from your Discard Pile."
+    "UPGRADE_DESCRIPTION": "Retain. Wilt a card from your Discard Pile."
   },
   "theSenseless:CardDejaVu": {
     "NAME": "Deja Vu",
@@ -35,7 +35,7 @@
   "theSenseless:CardSwitcheroo": {
     "NAME": "Switcheroo",
     "DESCRIPTION": "Switch all cards in your Discard Pile with your Draw Pile.",
-    "UPGRADE_DESCRIPTION": "Retain.\nSwitch all cards in your Discard Pile with your Draw Pile."
+    "UPGRADE_DESCRIPTION": "Retain. Switch all cards in your Discard Pile with your Draw Pile."
   },
   
   
