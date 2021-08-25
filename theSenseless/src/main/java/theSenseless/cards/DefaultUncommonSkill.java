@@ -1,5 +1,6 @@
 package theSenseless.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,6 +11,7 @@ import theSenseless.characters.TheSenseless;
 
 import static theSenseless.SenselessMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class DefaultUncommonSkill extends AbstractDynamicCard {
 
     /*
