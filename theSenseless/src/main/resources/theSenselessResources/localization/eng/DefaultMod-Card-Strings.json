@@ -23,6 +23,11 @@
     "NAME": "Forget",
     "DESCRIPTION": "Discard up to 3 Cards. Scry !M!."
   },
+  "theSenseless:CardForgottenTechnique": {
+    "NAME": "Forgotten Technique",
+    "DESCRIPTION": "Wilt a card from your Discard Pile.",
+    "UPGRADE_DESCRIPTION": "Retain. Wilt a card from your Discard Pile."
+  },
 
 
 
