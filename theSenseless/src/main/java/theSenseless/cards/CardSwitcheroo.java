@@ -34,7 +34,7 @@ public class CardSwitcheroo extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheSenseless.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 2;  // COST = ${COST}
 
     // /STAT DECLARATION/
 
