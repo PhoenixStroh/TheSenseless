@@ -27,6 +27,10 @@
     "NAME": "Forget",
     "DESCRIPTION": "Discard up to 3 Cards. Scry !M!."
   },
+  "theSenseless:CardBattleCry": {
+    "NAME": "Battle Cry",
+    "DESCRIPTION": "Apply !M! Weak."
+  },
   "theSenseless:CardForgottenTechnique": {
     "NAME": "Forgotten Technique",
     "DESCRIPTION": "thesenseless:Wilt a card from your Discard Pile.",
