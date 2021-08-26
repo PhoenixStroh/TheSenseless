@@ -12,7 +12,7 @@ import theSenseless.characters.TheSenseless;
 
 import static theSenseless.SenselessMod.makeCardPath;
 
-public class BattleCry extends AbstractDynamicCard {
+public class CardBattleCry extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -44,7 +44,7 @@ public class BattleCry extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public BattleCry() {
+    public CardBattleCry() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = WEAK;
     }
