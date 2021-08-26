@@ -173,31 +173,8 @@ public class TheSenseless extends CustomPlayer {
         retVal.add(CardDefend.ID);
 
         retVal.add(CardFlashKick.ID);
-        retVal.add(CardAxeKick.ID);
-        retVal.add(CardAnnihilate.ID);
-
-        retVal.add(CardForget.ID);
         retVal.add(CardForgottenTechnique.ID);
-        retVal.add(CardDejaVu.ID);
-        retVal.add(CardSwitcheroo.ID);
-
-        retVal.add(CardEarlyBird.ID);
-
-        //retVal.add(DefaultCommonAttack.ID);
-        //retVal.add(DefaultUncommonAttack.ID);
-        //retVal.add(DefaultRareAttack.ID);
-
-        //retVal.add(DefaultCommonSkill.ID);
-        //retVal.add(DefaultUncommonSkill.ID);
-        //retVal.add(DefaultRareSkill.ID);
-
-        //retVal.add(DefaultCommonPower.ID);
-        //retVal.add(DefaultUncommonPower.ID);
-        //retVal.add(DefaultRarePower.ID);
-
-        //retVal.add(DefaultAttackWithVariable.ID);
-        //retVal.add(DefaultSecondMagicNumberSkill.ID);
-        //retVal.add(OrbSkill.ID);
+        
         return retVal;
     }
 

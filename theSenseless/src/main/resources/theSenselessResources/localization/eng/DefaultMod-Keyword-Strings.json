@@ -16,5 +16,17 @@
       "multikeyword"
     ],
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "PROPER_NAME": "Wilt",
+    "NAMES": [
+      "Wilt",
+      "wilt",
+      "Wilting",
+      "wilting",
+      "Wilted",
+      "wilted"
+    ],
+    "DESCRIPTION": "Choose a card from the mentioned pile, play it for its energy, then exhaust it."
   }
 ]

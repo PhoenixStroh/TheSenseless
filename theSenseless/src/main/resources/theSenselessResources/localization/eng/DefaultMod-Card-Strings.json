@@ -29,12 +29,12 @@
   },
   "theSenseless:CardForgottenTechnique": {
     "NAME": "Forgotten Technique",
-    "DESCRIPTION": "Wilt a card from your Discard Pile.",
-    "UPGRADE_DESCRIPTION": "Retain. Wilt a card from your Discard Pile."
+    "DESCRIPTION": "thesenseless:Wilt a card from your Discard Pile.",
+    "UPGRADE_DESCRIPTION": "Retain. thesenseless:Wilt a card from your Discard Pile."
   },
   "theSenseless:CardDejaVu": {
     "NAME": "Deja Vu",
-    "DESCRIPTION": "Wilt a card from your Exhaust Pile."
+    "DESCRIPTION": "thesenseless:Wilt a card from your Exhaust Pile."
   },
   "theSenseless:CardSwitcheroo": {
     "NAME": "Switcheroo",
@@ -43,7 +43,7 @@
   },
   "theSenseless:CardEarlyBird": {
     "NAME": "Early Bird",
-    "DESCRIPTION": "At the beginning of your turn, Wilt a Card."
+    "DESCRIPTION": "At the beginning of your turn, thesenseless:Wilt a Card."
   },
   
   

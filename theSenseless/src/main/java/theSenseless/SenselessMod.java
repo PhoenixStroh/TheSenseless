@@ -32,6 +32,7 @@ import theSenseless.util.IDCheckDontTouchPls;
 import theSenseless.util.TextureLoader;
 import theSenseless.variables.DefaultCustomVariable;
 import theSenseless.variables.DefaultSecondMagicNumber;
+import java.lang.String;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
