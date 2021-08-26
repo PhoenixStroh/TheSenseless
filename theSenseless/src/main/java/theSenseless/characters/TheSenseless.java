@@ -23,6 +23,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theSenseless.SenselessMod;
 import theSenseless.cards.*;
+import theSenseless.cards.defaultCards.DefaultCommonAttack;
+import theSenseless.cards.defaultCards.DefaultRarePower;
 import theSenseless.relics.DefaultClickableRelic;
 import theSenseless.relics.PlaceholderRelic;
 import theSenseless.relics.PlaceholderRelic2;
@@ -179,7 +181,6 @@ public class TheSenseless extends CustomPlayer {
         retVal.add(CardDejaVu.ID);
         retVal.add(CardSwitcheroo.ID);
 
-        retVal.add(DefaultRarePower.ID);
         retVal.add(CardEarlyBird.ID);
 
         //retVal.add(DefaultCommonAttack.ID);

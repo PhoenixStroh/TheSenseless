@@ -1,4 +1,4 @@
-package theSenseless.cards;
+package theSenseless.cards.defaultCards;
 
 import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;

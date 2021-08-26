@@ -1,69 +1,68 @@
-package theSenseless.cards;
+package theSenseless.cards.defaultCards;
 
-import basemod.helpers.BaseModCardTags;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import theSenseless.SenselessMod;
+import theSenseless.cards.AbstractDynamicCard;
 import theSenseless.characters.TheSenseless;
-import theSenseless.powers.RarePower;
 
 import static theSenseless.SenselessMod.makeCardPath;
 
-public class DefaultRarePower extends AbstractDynamicCard {
+@AutoAdd.Ignore
+public class DefaultUncommonSkill extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
-     * In-Progress Form At the start of your turn, play a TOUCH.
+     * A Better Defend Gain 1 Plated Armor. Affected by Dexterity.
      */
 
     // TEXT DECLARATION 
 
-    public static final String ID = SenselessMod.makeID(DefaultRarePower.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String ID = SenselessMod.makeID(DefaultUncommonSkill.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
 
-
     // STAT DECLARATION 	
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSenseless.Enums.COLOR_GRAY;
 
-    private static final int COST = 3;
-    private static final int UPGRADE_COST = 2;
+    private static final int COST = 1;
+    private static final int UPGRADE_REDUCED_COST = 0;
 
-    private static final int MAGIC = 1;
+    private static final int BLOCK = 1;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     // /STAT DECLARATION/
 
 
-    public DefaultRarePower() {
-
+    public DefaultUncommonSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
-
-        this.tags.add(BaseModCardTags.FORM); //Tag your strike, defend and form cards so that they work correctly.
-
+        baseBlock = BLOCK;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new RarePower(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p, p, new PlatedArmorPower(p, block), block));
     }
 
-    //Upgraded stats.
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBaseCost(UPGRADE_REDUCED_COST);
             initializeDescription();
         }
     }

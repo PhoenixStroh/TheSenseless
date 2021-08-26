@@ -1,4 +1,4 @@
-package theSenseless.cards;
+package theSenseless.cards.defaultCards;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theSenseless.SenselessMod;
+import theSenseless.cards.AbstractDynamicCard;
 import theSenseless.characters.TheSenseless;
 
 import static theSenseless.SenselessMod.makeCardPath;

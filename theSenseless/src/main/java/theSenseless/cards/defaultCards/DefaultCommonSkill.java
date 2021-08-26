@@ -1,4 +1,4 @@
-package theSenseless.cards;
+package theSenseless.cards.defaultCards;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSenseless.SenselessMod;
+import theSenseless.cards.AbstractDynamicCard;
 import theSenseless.characters.TheSenseless;
 
 import static theSenseless.SenselessMod.makeCardPath;

@@ -1,76 +1,79 @@
-package theSenseless.cards;
+package theSenseless.cards.defaultCards;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theSenseless.SenselessMod;
+import theSenseless.cards.AbstractDynamicCard;
 import theSenseless.characters.TheSenseless;
 
 import static theSenseless.SenselessMod.makeCardPath;
 
 @AutoAdd.Ignore
-public class DefaultRareAttack extends AbstractDynamicCard {
+public class DefaultAttackWithVariable extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
-     * TOUCH Deal 30(35) damage.
+     * Special Strike: Deal 7 (*) damage times the energy you currently have.
      */
 
+    // TEXT DECLARATION
 
-    // TEXT DECLARATION 
-
-    public static final String ID = SenselessMod.makeID(DefaultRareAttack.class.getSimpleName());
+    public static final String ID = SenselessMod.makeID(DefaultAttackWithVariable.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
 
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheSenseless.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADE_PLUS_DMG = 1;
 
-    private static final int DAMAGE = 30;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    public int specialDamage;
 
     // /STAT DECLARATION/
 
-
-    public DefaultRareAttack() {
+    public DefaultAttackWithVariable() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-    }
 
+        isMultiDamage = true;
+    }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null) {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));
-        }
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.NONE));
+        // Create an int which equals to your current energy.
+        int effect = EnergyPanel.totalCount;
 
+        // For each energy, create 1 damage action.
+        for (int i = 0; i < effect; i++) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                            AbstractGameAction.AttackEffect.FIRE));
+        }
     }
 
-    //Upgraded stats.
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            initializeDescription();
         }
     }
 }

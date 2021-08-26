@@ -1,33 +1,42 @@
-package theSenseless.cards;
+package theSenseless.cards.defaultCards;
 
 import basemod.AutoAdd;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import theSenseless.SenselessMod;
+import theSenseless.cards.AbstractDynamicCard;
 import theSenseless.characters.TheSenseless;
+import theSenseless.orbs.DefaultOrb;
 
 import static theSenseless.SenselessMod.makeCardPath;
 
 @AutoAdd.Ignore
-public class DefaultUncommonSkill extends AbstractDynamicCard {
+public class OrbSkill extends AbstractDynamicCard {
 
     /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
+     * Orb time.
      *
-     * A Better Defend Gain 1 Plated Armor. Affected by Dexterity.
+     * Channel 1 Default Orb.
      */
 
-    // TEXT DECLARATION 
+    // TEXT DECLARATION
 
-    public static final String ID = SenselessMod.makeID(DefaultUncommonSkill.class.getSimpleName());
+    public static final String ID = SenselessMod.makeID(OrbSkill.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+
     public static final String IMG = makeCardPath("Skill.png");
+
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     // /TEXT DECLARATION/
 
-    // STAT DECLARATION 	
+
+    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -35,34 +44,28 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
     public static final CardColor COLOR = TheSenseless.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int UPGRADE_REDUCED_COST = 0;
-
-    private static final int BLOCK = 1;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     // /STAT DECLARATION/
 
-
-    public DefaultUncommonSkill() {
+    public OrbSkill() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
+
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new PlatedArmorPower(p, block), block));
+
+        AbstractDungeon.actionManager.addToBottom(new ChannelAction(new DefaultOrb())); // Channel a Default Orb.
+
     }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADE_REDUCED_COST);
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.initializeDescription();
         }
     }
 }
