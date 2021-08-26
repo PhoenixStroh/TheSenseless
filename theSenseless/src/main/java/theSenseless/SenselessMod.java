@@ -28,6 +28,7 @@ import theSenseless.relics.BottledPlaceholderRelic;
 import theSenseless.relics.DefaultClickableRelic;
 import theSenseless.relics.PlaceholderRelic;
 import theSenseless.relics.PlaceholderRelic2;
+import theSenseless.relics.ScrollOfReflectionRelic;
 import theSenseless.util.IDCheckDontTouchPls;
 import theSenseless.util.TextureLoader;
 import theSenseless.variables.DefaultCustomVariable;
@@ -333,9 +334,10 @@ public class SenselessMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheSenseless.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheSenseless.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheSenseless.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new ScrollOfReflectionRelic(), TheSenseless.Enums.COLOR_GRAY);
+        //BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheSenseless.Enums.COLOR_GRAY);
+        //BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheSenseless.Enums.COLOR_GRAY);
+        //BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheSenseless.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
