@@ -19,6 +19,10 @@
     "NAME": "Axe Kick",
     "DESCRIPTION": "Apply !M! Vulnerable. Deal !D! damage."
   },
+  "theSenseless:CardDiveKick": {
+    "NAME": "Dive Kick",
+    "DESCRIPTION": "Deal !D! damage. Take !M! damage."
+  },
   "theSenseless:CardDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
