@@ -28,5 +28,13 @@
       "wilted"
     ],
     "DESCRIPTION": "Choose a card from the mentioned pile, play it for its energy, then exhaust it."
+  },
+  {
+    "PROPER_NAME": "Drunk",
+    "NAMES": [
+      "Drunk",
+      "drunk"
+    ],
+    "DESCRIPTION": "Whenever your turn ends, Draw a card. At the start of your next tun, Wilt a random card from your Draw Pile for 0 Energy. Lose 1 Drunk."
   }
 ]

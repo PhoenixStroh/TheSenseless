@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import theSenseless.SenselessMod;
 import theSenseless.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static theSenseless.SenselessMod.makeRelicOutlinePath;
@@ -30,11 +31,10 @@ public class ScrollOfReflectionRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    private AbstractPlayer p;
+    // private CardGroup tmpDeck;
 
     public ScrollOfReflectionRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
-        this.p = AbstractDungeon.player;
     }
 
     // Flash at the start of Battle.
@@ -43,18 +43,30 @@ public class ScrollOfReflectionRelic extends CustomRelic {
         flash();
     }
 
-    @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        logger.info("Is Player null?: " + p + " Is Card null?: " + c);
-        if (p.discardPile.contains(c))
-        {
-            logger.info("Played Card was in discard pile");   
-        }
-        else
-        {
-            logger.info("Played Card was not in discard pile");  
-        }
-    }
+    // @Override
+    // public void atBattleStart(){
+    //     tmpDeck = AbstractDungeon.player.discardPile;
+    // }
+
+    // @Override
+    // public void onDrawOrDiscard()
+    // {
+    //     tmpDeck = AbstractDungeon.player.discardPile;
+    // }
+
+    // @Override
+    // public void onPlayCard(AbstractCard c, AbstractMonster m) {
+    //     AbstractPlayer p = AbstractDungeon.player;
+    //     logger.info("Is Player null?: " + p + " Is Card null?: " + c);
+    //     if (tmpDeck.contains(c))
+    //     {
+    //         logger.info("Played Card was in discard pile");   
+    //     }
+    //     else
+    //     {
+    //         logger.info("Played Card was not in discard pile");  
+    //     }
+    // }
 
     // Description
     @Override

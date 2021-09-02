@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import theSenseless.SenselessMod;
+import theSenseless.relics.ScrollOfReflectionRelic;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,8 +28,15 @@ public class WiltAction extends AbstractGameAction {
     private CardGroup cardGroup;
     private CardGroup pickGroup;
 
-    public WiltAction(String cardGroup, boolean ignoreCost) {
+    private boolean isRandom;
+    private boolean ignoreCost;
+    private String pileType;
+
+    public WiltAction(String cardGroup, boolean ignoreCost, boolean random) {
         this.p = AbstractDungeon.player;
+        isRandom = random;
+        this.ignoreCost = ignoreCost;
+        pileType = cardGroup;
         switch (cardGroup)
         {
             case "draw": this.cardGroup = this.p.drawPile; break;
@@ -46,22 +55,22 @@ public class WiltAction extends AbstractGameAction {
         }
 
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_FAST;
+        this.duration = Settings.ACTION_DUR_MED;
     }
 
     public WiltAction(boolean ignoreCost)
     {
-        this("discard",ignoreCost);
+        this("discard",ignoreCost,false);
     }
 
     public WiltAction(String cardGroup)
     {
-        this(cardGroup,false);
+        this(cardGroup,false,false);
     }
 
     public WiltAction()
     {
-        this("discard",false);
+        this("discard",false,false);
     }
 
     public void update() {
@@ -70,8 +79,8 @@ public class WiltAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        // ???
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        // Play once
+        if (this.duration == Settings.ACTION_DUR_MED) {
             //If the discard pile is empty, end action.
             if (pickGroup.isEmpty()) {
                 this.isDone = true;
@@ -84,9 +93,17 @@ public class WiltAction extends AbstractGameAction {
             } 
             //???
             if (pickGroup.group.size() > this.amount) {
-                AbstractDungeon.gridSelectScreen.open(pickGroup, 1, "Choose a card to play and exhaust.", false, false, false, false);
-                tickDuration();
-                return;
+                if (isRandom)
+                {
+                    //Because all cards are added to a random spot, this is effectively random
+                    Wilt(pickGroup.getTopCard());
+                }
+                else
+                {
+                    AbstractDungeon.gridSelectScreen.open(pickGroup, 1, "Choose a card to play and exhaust.", false, false, false, false);
+                    tickDuration();
+                    return;
+                }
             } 
         } 
         //If the cards are selected, do action.
@@ -96,7 +113,8 @@ public class WiltAction extends AbstractGameAction {
             } 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             AbstractDungeon.player.hand.refreshHandLayout();
-        } 
+        }
+
         tickDuration();
     }
 
@@ -105,8 +123,19 @@ public class WiltAction extends AbstractGameAction {
         c.exhaust = true;
         cardGroup.group.remove(c);
         (AbstractDungeon.getCurrRoom()).souls.remove(c);
+
         addToBot((AbstractGameAction)new NewQueueCardAction(c, true, false, true));
-        p.loseEnergy(c.cost);
+        if (AbstractDungeon.player.hasRelic(ScrollOfReflectionRelic.ID) && pileType == "discard") {
+            logger.info("REFLECTED!!!");
+            AbstractCard tmpC = c.makeSameInstanceOf();
+            tmpC.purgeOnUse = true;
+            addToBot((AbstractGameAction)new NewQueueCardAction(tmpC, true, false, true));
+        }
+
+        if (!ignoreCost)
+        {
+            p.loseEnergy(c.cost);
+        }
     }
 }
 

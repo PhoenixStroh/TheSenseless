@@ -23,6 +23,10 @@
     "NAME": "Dive Kick",
     "DESCRIPTION": "Deal !D! damage. Take !M! damage."
   },
+  "theSenseless:CardStupor": {
+    "NAME": "Stupor",
+    "DESCRIPTION": "Deal !D! Damage to a random enemy. Gain !M! thesenseless:Drunk."
+  },
   "theSenseless:CardDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
