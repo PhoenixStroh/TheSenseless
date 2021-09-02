@@ -24,7 +24,6 @@ import org.apache.logging.log4j.Logger;
 import theSenseless.SenselessMod;
 import theSenseless.cards.*;
 import theSenseless.cards.defaultCards.DefaultCommonAttack;
-import theSenseless.cards.defaultCards.DefaultRarePower;
 import theSenseless.relics.DefaultClickableRelic;
 import theSenseless.relics.PlaceholderRelic;
 import theSenseless.relics.PlaceholderRelic2;

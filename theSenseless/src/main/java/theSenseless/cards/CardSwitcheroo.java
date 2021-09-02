@@ -2,12 +2,10 @@ package theSenseless.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSenseless.SenselessMod;
 import theSenseless.characters.TheSenseless;
 import theSenseless.actions.SwitchDiscardAndDrawAction;
-import theSenseless.actions.WiltAction;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 import static theSenseless.SenselessMod.makeCardPath;

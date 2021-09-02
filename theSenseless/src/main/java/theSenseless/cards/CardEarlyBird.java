@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theSenseless.SenselessMod;
 import theSenseless.characters.TheSenseless;
 import theSenseless.powers.EarlyBirdPower;
-import theSenseless.powers.RarePower;
 
 import static theSenseless.SenselessMod.makeCardPath;
 

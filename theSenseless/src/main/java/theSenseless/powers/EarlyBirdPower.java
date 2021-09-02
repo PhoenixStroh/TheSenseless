@@ -9,11 +9,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theSenseless.SenselessMod;
 import theSenseless.cards.CardForgottenTechnique;
-import theSenseless.cards.defaultCards.DefaultRareAttack;
 import theSenseless.util.TextureLoader;
 
 public class EarlyBirdPower extends AbstractPower implements CloneablePowerInterface {
