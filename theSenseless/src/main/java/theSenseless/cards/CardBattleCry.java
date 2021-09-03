@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import theSenseless.SenselessMod;
 import theSenseless.characters.TheSenseless;
@@ -31,7 +32,7 @@ public class CardBattleCry extends AbstractDynamicCard {
     // STAT DECLARATION 	
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheSenseless.Enums.COLOR_GRAY;
 
@@ -51,7 +52,8 @@ public class CardBattleCry extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new VulnerablePower(m, this.magicNumber, false)));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo,p,new WeakPower(mo, this.magicNumber, false)));
     }
 
     //Upgraded stats.

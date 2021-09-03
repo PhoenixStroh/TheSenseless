@@ -35,10 +35,6 @@
     "NAME": "Forget",
     "DESCRIPTION": "Discard up to 3 Cards. Scry !M!."
   },
-  "theSenseless:CardBattleCry": {
-    "NAME": "Battle Cry",
-    "DESCRIPTION": "Apply !M! Weak."
-  },
   "theSenseless:CardForgottenTechnique": {
     "NAME": "Forgotten Technique",
     "DESCRIPTION": "thesenseless:Wilt a card from your Discard Pile.",
@@ -58,6 +54,67 @@
     "DESCRIPTION": "At the beginning of your turn, thesenseless:Wilt a Card."
   },
   
+  "theSenseless:CardBattleCry": {
+      "NAME": "Battle Cry",
+      "DESCRIPTION": "Apply !M! Weak to ALL enemies."},
+  "theSenseless:CardDrunkenFist": {
+      "NAME": "Drunken Fist",
+      "DESCRIPTION": "Deal !D! damage. If you are thesenseless:Drunk, Draw a Card."
+    },
+  "theSenseless:CardVengeance": {
+      "NAME": "Vengeance",
+      "DESCRIPTION": "Deal damage equal to all the unblocked damage you've taken this turn and last turn."
+    },
+  "theSenseless:CardWindmillKick": {
+      "NAME": "Windmill Kick",
+      "DESCRIPTION": "Deal !D! damage 4 times. If you are thesenseless:Drunk, deal damage to ALL enemies. Shuffle a Dazed into your Draw Pile."
+    },
+  "theSenseless:CardBearHug": {
+      "NAME": "Bear Hug",
+      "DESCRIPTION": "Apply !M! thesenseless:Grappled and deal !D! damage. Take !M! Damage. If the target is already thesenseless:Grappled, Deal !D! more damage."
+    },
+  "theSenseless:CardSwig": {
+      "NAME": "Swig",
+      "DESCRIPTION": "Gain !M! thesenseless:Drunk"
+    },
+  "theSenseless:CardTakeHold": {
+      "NAME": "Take Hold",
+      "DESCRIPTION": "Apply !M! thesenseless:Grapple"
+    },
+  "theSenseless:CardBurial": {
+      "NAME": "Burial",
+      "DESCRIPTION": "Gain !B! Block. thesenseless:Wilt a card from your Discard Pile."
+    },
+  "theSenseless:CardCurtail": {
+      "NAME": "Curtail",
+      "DESCRIPTION": "Draw 1 Card. Discard 1 Card.  thesenseless:Wilt a card from your Discard Pile."
+    },
+  "theSenseless:CardQuickThinking": {
+      "NAME": "Quick Thinking",
+      "DESCRIPTION": "Exhaust a random card in you hand. Gain !M! Energy.",
+      "UPGRADE_DESCRIPTION": "Exhaust a card in you hand. Gain !M! Energy."
+    },
+  "theSenseless:CardDirectory": {
+      "NAME": "Directory",
+      "DESCRIPTION": "Gain !B! Block. Put a card from your Discard Pile on top of your Draw Pile."
+    },
+  "theSenseless:CardBloodShield": {
+      "NAME": "Blood Shield",
+      "DESCRIPTION": "Lose !M! HP. Gain !B! Block.",
+      "UPGRADE_DESCRIPTION": "Take !M! damage. Gain !B! Block."
+    },
+  "theSenseless:CardMasochist": {
+      "NAME": "Masochist",
+      "DESCRIPTION": "Whenever you lose HP from a card, gain !M! Temporary Strength."
+    },
+  "theSenseless:CardLastStand": {
+      "NAME": "Last Stand",
+      "DESCRIPTION": "Fleeting. Next hit that would have killed you will instead leave you at !M! HP."
+    },
+  "theSenseless:CardComboStarter": {
+      "NAME": "Combo Starter",
+      "DESCRIPTION": "Deal !D! Damage. Everytime you play this card, increase the damage of all cards containing \"Combo\" by !M!."
+    },
   
 
   "theSenseless:DefaultCommonAttack": {
