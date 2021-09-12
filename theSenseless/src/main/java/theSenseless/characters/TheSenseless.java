@@ -162,9 +162,6 @@ public class TheSenseless extends CustomPlayer {
 
         retVal.add(CardStrike.ID);
         retVal.add(CardStrike.ID);
-        retVal.add(CardStrike.ID);
-        retVal.add(CardStrike.ID);
-        retVal.add(CardStrike.ID);
 
         retVal.add(CardDefend.ID);
         retVal.add(CardDefend.ID);
@@ -172,11 +169,15 @@ public class TheSenseless extends CustomPlayer {
         retVal.add(CardDefend.ID);
         retVal.add(CardDefend.ID);
 
-        retVal.add(CardFlashKick.ID);
         retVal.add(CardForgottenTechnique.ID);
-        retVal.add(CardBattleCry.ID);
         retVal.add(CardSwig.ID);
-        retVal.add(CardComboStarter.ID);
+        retVal.add(CardDiveKick.ID);
+        retVal.add(CardDiveKick.ID);
+        retVal.add(CardMasochist.ID);
+        retVal.add(CardMasochist.ID);
+        retVal.add(CardBottomsUp.ID);
+        retVal.add(CardBloodShield.ID);
+        retVal.add(CardQuickThinking.ID);
 
         return retVal;
     }

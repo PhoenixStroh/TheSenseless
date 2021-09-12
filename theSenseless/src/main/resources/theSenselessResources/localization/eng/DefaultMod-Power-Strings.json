@@ -14,5 +14,9 @@
 "theSenseless:DrunkPower": {
         "NAME": "Drunk",
         "DESCRIPTIONS": ["Whenever your turn ends, Draw a card. At the start of your next tun, Wilt a random card from your Draw Pile for 0 Energy. Lose 1 Drunk."]
+},
+"theSenseless:MascohistPower": {
+        "NAME": "Masochist",
+        "DESCRIPTIONS": ["Whenever you lose HP from a card, gain #b"," Temporary Strength."]
 }
 }

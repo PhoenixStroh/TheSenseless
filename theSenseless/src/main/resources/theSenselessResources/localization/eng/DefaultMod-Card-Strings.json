@@ -51,7 +51,7 @@
   },
   "theSenseless:CardEarlyBird": {
     "NAME": "Early Bird",
-    "DESCRIPTION": "At the beginning of your turn, thesenseless:Wilt a Card."
+    "DESCRIPTION": "At the beginning of your turn, thesenseless:Wilt a Card from your Discard Pile."
   },
   
   "theSenseless:CardBattleCry": {
@@ -76,6 +76,11 @@
   "theSenseless:CardSwig": {
       "NAME": "Swig",
       "DESCRIPTION": "Gain !M! thesenseless:Drunk"
+    },
+    "theSenseless:CardBottomsUp": {
+        "NAME": "Bottoms Up",
+        "DESCRIPTION": "Gain !M! thesenseless:Drunk X times.",
+        "UPGRADE_DESCRIPTION": "Gain !M! thesenseless:Drunk X+1 times."
     },
   "theSenseless:CardTakeHold": {
       "NAME": "Take Hold",
