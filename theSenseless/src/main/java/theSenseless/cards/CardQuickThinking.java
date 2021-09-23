@@ -54,20 +54,21 @@ public class CardQuickThinking extends AbstractDynamicCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Quick Thinking");
 
     private static final int COST = 0;  // COST = ${COST}
+    private static final int ENERGY_GAIN = 2;
 
     // /STAT DECLARATION/
 
 
     public CardQuickThinking() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
+        baseMagicNumber = magicNumber = ENERGY_GAIN;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(1));
+        addToBot(new GainEnergyAction(ENERGY_GAIN));
         if (this.upgraded) {
           addToBot(new ExhaustAction(1, false));
         } else {
