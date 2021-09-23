@@ -120,7 +120,14 @@
       "NAME": "Combo Starter",
       "DESCRIPTION": "Deal !D! Damage. Everytime you play this card, increase the damage of all cards containing \"Combo\" by !M!."
     },
+  "theSenseless:CardOneInchPunch": {
+      "NAME": "One Inch Punch",
+      "DESCRIPTION": "Deal !D! Damage. Deal 1 Damage less for each card currently in your Deck."
+    },
   
+
+
+
 
   "theSenseless:DefaultCommonAttack": {
     "NAME": "Strike",

@@ -179,6 +179,8 @@ public class TheSenseless extends CustomPlayer {
         retVal.add(CardBloodShield.ID);
         retVal.add(CardQuickThinking.ID);
 
+        retVal.add(CardOneInchPunch.ID);
+
         return retVal;
     }
 
